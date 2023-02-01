@@ -1,46 +1,15 @@
-// const persona: {
-//   name: string;
-//   age: number;
-// } = {
-// const persona: {
-//   name: string;
-//   age: number;
-//   hobbies: string[];
-//   role: [number, string]; // Tuples type
-// } = {
-//   name: "Malek",
-//   age: 30,
-//   hobbies: ["Sports", "Cooking"],
-//   role: [2, "author"],
-// };
-
-// const ADMIN = 0;
-// const READ_ONLY = 1;
-// const AUTHOR = 2;
-
-enum Role {
-  ADMIN,
-  READ_ONLY,
-  AUTHOR,
-}
-const persona = {
-  name: "Malek",
-  age: 30,
-  hobbies: ["Sports", "Cooking"],
-  role: Role.ADMIN,
-};
-
-// persona.role.push("admin"); // This is allowed !!! And you should be aware of it !!
-// persona.role[1] = 3;
-// persona.role = [0, "teacher", "professor"];    // This is not allowed!!!
-let favoriteActivities: string[];
-favoriteActivities = ["Swim"];
-console.log(persona.name);
-
-for (const hobby of persona.hobbies) {
-  console.log(hobby);
+function combine(input1: number | string, input2: number | string) {
+  let result;
+  if (typeof input1 === "number" && typeof input2 === "number") {
+    result = input1 + input2;
+  } else {
+    result = input1.toString() + input2.toString();
+  }
+  return result;
 }
 
-if (persona.role === Role.AUTHOR) {
-  console.log("is author");
-}
+const combinedAges = combine(30, 25);
+console.log(combinedAges);
+
+const combinedNames = combine("Anna ", "Malek");
+console.log(combinedNames);
